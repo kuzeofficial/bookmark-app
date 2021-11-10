@@ -16,7 +16,11 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-        "@components/*": ["components/*"],
+        "@components/*": ["src/components/*"],
+        "@context/*": ["src/context/*"],
+        "@lib/*": ["src/lib/*"],
+        "@layout/*": ["src/layout/*"],
+        "@translations/*": ["src/translations/*"],
         "@styles/*": ["styles/*"],
         "@pages/*": ["pages/*"],
     }
