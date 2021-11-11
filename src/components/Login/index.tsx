@@ -32,7 +32,7 @@ export const Login = () => {
                     }
                 }).then(async (response:any) => {
                       const {"access-token": accessToken, "refresh-token": refreshToken} = response.data.tokens
-                      await response.status === 200 && router.push('/login')
+                      await response.status === 200 && router.push('/dashboard')
                       saveToken('access-token', accessToken)
                       saveToken('refresh-token', refreshToken)
                 })
