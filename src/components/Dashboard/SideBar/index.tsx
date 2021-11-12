@@ -1,6 +1,13 @@
 import {useState} from 'react'
 import Link from 'next/link'
-import { TopBar } from '@components/Dashboard/TopBar'
+import { TopBar } from '@components/Dashboard/SideBar/TopBar'
+import { Links } from './Links'
+import { Profile } from '@components/Icons/Profile'
+import { UpdMarker } from '@components/Icons/UpdMarker'
+import { DelMarker } from '@components/Icons/DelMarker'
+import { NewMarker } from '@components/Icons/NewMarker'
+import { Markers } from '@components/Icons/Markers'
+import { CloseSideBar } from '@components/Icons/CloseSideBar'
 
 export const SideBar = () => {
     const [showSidebar, setShowSidebar] = useState('-left-64')
@@ -13,9 +20,7 @@ export const SideBar = () => {
             <div className="flex-col">
                 <div className="sm:hidden flex justify-center mb-10">
                         <button onClick={() => setShowSidebar('-left-64 w-64')}>
-                           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
+                           <CloseSideBar/>
                         </button>
                 </div>
                 <div className="text-center">
@@ -26,32 +31,12 @@ export const SideBar = () => {
                 
             </div>
             <div className="mt-10 mb-4 flex flex-col items-center">
-                <ul className="relative flex flex-col items-center sm:items-start">
-                    <Link href="/dashboard/markers" passHref>
-                        <li className="mb-2 px-4 py-4 text-gray-100 flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-300  hover:font-bold  rounded-lg cursor-pointer">   
-                                <span>Markers</span>    
-                        </li>
-                    </Link>
-                    <Link href="/dashboard/newmarker" passHref>
-                    <li className="mb-2 px-4 py-4 text-gray-100 flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-300  hover:font-bold  rounded-lg cursor-pointer">                   
-                            <span>Create New Marker</span>
-                    </li>
-                    </Link>
-                    <Link href="/dashboard/delmarker" passHref>
-                    <li className="mb-2 px-4 py-4 text-gray-100 flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-300  hover:font-bold  rounded-lg cursor-pointer">             
-                            <span>Remove Marker</span>              
-                    </li>
-                    </Link>
-                    <Link href="/dashboard/updmarker" passHref>
-                    <li className="mb-2 px-4 py-4 text-gray-100 flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-300  hover:font-bold  rounded-lg cursor-pointer">
-                            <span >Update Marker</span>
-                    </li>
-                    </Link>
-                    <Link href="/dashboard/profile" passHref>
-                        <li className="mb-2 px-4 py-4 text-gray-100 flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-300  hover:font-bold  rounded-lg cursor-pointer">
-                                <span>Profile</span>
-                        </li>
-                    </Link>
+                <ul className=" flex flex-col items-center sm:items-start">
+                    <Links enlace="/dashboard/markers" texto="Markers" icon={<Markers/>} />
+                    <Links enlace="/dashboard/newmarker" texto="New Marker" icon={<NewMarker/>} />
+                    <Links enlace="/dashboard/delmarker" texto="Delete Marker" icon={<DelMarker/>} />
+                    <Links enlace="/dashboard/updmarker" texto="Update Marker" icon={<UpdMarker/>} />
+                    <Links enlace="/dashboard/profile" texto="Profile" icon={<Profile/>} />
                 </ul>
             </div>
         </nav>

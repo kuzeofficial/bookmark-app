@@ -4,8 +4,8 @@ import DashPage from '.'
 const DelMarker = () => {
     return (
         <DashPage>
-            <div className="mobile-contenido w-full text-center overflow-hidden sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/2">
-                <div className="pt-14 pb-28 px-3 md:px-8 h-auto">Eliminar Marcadores</div>
+            <div className="md:ml-64 px-10 py-10 flex flex-wrap overflow-">
+                Eliminar Marcador
             </div>
         </DashPage>
         

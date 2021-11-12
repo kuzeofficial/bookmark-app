@@ -5,7 +5,7 @@ import { TopBarLogin } from '../src/components/Login/TopBar/index';
 
 const Home: NextPage = () => {
   return (
-    <main className="bg-gray-100 dark:bg-gray-900 transition duration-300">
+    <main className="bg-white dark:bg-gray-900 transition duration-300">
       <Head>
         <title>BookMarker📚</title>
       </Head>
