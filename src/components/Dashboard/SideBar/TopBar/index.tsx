@@ -1,9 +1,11 @@
 import { DarkMode } from '@components/Icons/DarkMode'
 import { HambMenu } from '@components/Icons/HambMenu'
 import { LightMode } from '@components/Icons/LightMode'
-import React from 'react'
 import useDarkMode from 'src/hooks/useDarkMode'
-export const TopBar = ({setShowSidebar }:any) => {
+interface TopBarProps {
+    setShowSidebar: React.Dispatch<React.SetStateAction<string>>
+}
+export const TopBar = ({setShowSidebar}:TopBarProps) => {
     const [colorTheme, setTheme] = useDarkMode()
     return (
         <section className="flex-1 flex flex-col">

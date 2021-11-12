@@ -1,6 +1,4 @@
 import Cookies from 'universal-cookie';
-import { GetServerSidePropsContext } from 'next';
-
 
 export const saveToken = (key: string, token: string) => {
     const cookies = new Cookies();

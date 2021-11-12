@@ -14,7 +14,7 @@ export const SideBar = () => {
     return (
         <>
         <div className="flex sm:hidden">
-            <TopBar showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
+            <TopBar setShowSidebar={setShowSidebar}/>
         </div>
         <nav className={`h-screen fixed top-0 sm:left-0 ${showSidebar} overflow-y-auto flex-row  flex-nowrap overflow-hidden shadow-xl bg-indigo-500  md:w-64 z-10 py-4 px-6 transition-all duration-300`}>
             <div className="flex-col">
