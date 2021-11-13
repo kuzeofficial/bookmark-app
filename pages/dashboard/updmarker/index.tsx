@@ -1,11 +1,11 @@
-import DashPage from './index'
-const Profile = () => {
+import DashPage from '../index'
+const UpdateMarker = () => {
     return (
         <DashPage>
             <div className="md:ml-64 px-10 py-10 flex flex-wrap overflow-">
-                Profile
+                Actualizar Marcador
             </div>
         </DashPage>
     )
 }
-export default Profile
+export default UpdateMarker

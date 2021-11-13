@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { saveToken } from "src/services/token";
@@ -7,12 +7,14 @@ import { AlertError } from './AlertError';
 import { ButtonLogin } from './ButtonLogin';
 import { SvgCircle } from './SvgCircle';
 import { FieldHelper } from './FieldHelper';
-const axios = require('axios');
 
+const axios = require('axios');
+import { ActionType, GlobalContext } from 'src/context';
 export const Login = () => {
     const router = useRouter()
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
+    const { dispatch } = useContext(GlobalContext);
     return (
         <Formik 
             initialValues={{username: '', password: ''}} 
@@ -32,6 +34,10 @@ export const Login = () => {
                     }
                 }).then(async (response:any) => {
                       const {"access-token": accessToken, "refresh-token": refreshToken} = response.data.tokens
+                      dispatch({
+                        type: ActionType.SetUser,
+                        payload: response.data.data,
+                      });
                       await response.status === 200 && router.push('/dashboard')
                       saveToken('access-token', accessToken)
                       saveToken('refresh-token', refreshToken)

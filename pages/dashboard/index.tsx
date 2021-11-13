@@ -13,7 +13,7 @@ const DashPage = ({children}: DashPageProps) => {
                 </div>
                   
                 {children ? (children): (
-                     <div className="md:ml-64 px-10 py-10 flex flex-wrap overflow-">
+                     <div className="md:ml-64 px-10 py-10 w-full">
                         Hello
                     </div>
                 )}
