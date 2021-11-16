@@ -2,9 +2,10 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['avatars.githubusercontent.com', 'images.githubusercontent.com', 'github.com']
+    domains: ['cdn.goollodging.com']
   },
   env: {
     LOGIN_URL: process.env.LOGIN_URL,
+    MARKER: process.env.MARKER,
   },
 }
