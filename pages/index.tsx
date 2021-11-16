@@ -1,12 +1,19 @@
 import type { NextPage } from 'next'
-import { Avatar } from "@components/Avatar/"
+import  Head  from "next/head"
+import { Login } from '@components/Login'
+import { TopBarLogin } from '../src/components/Login/TopBar/index';
 
 const Home: NextPage = () => {
   return (
-    <>
-        <h1 className="text-center my-24 font-black tracking-tight text-6xl">Our homepage</h1>
-        <Avatar/>
-    </>
+    <main className="bg-gray-100 dark:bg-gray-900 transition duration-300">
+      <Head>
+        <title>BookMarker📚</title>
+      </Head>
+        <TopBarLogin/>
+        <div className="flex relative flex-col items-center h-screen justify-center ">
+          <Login/>
+        </div>
+    </main>
   )
 }
 
